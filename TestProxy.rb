@@ -37,6 +37,3 @@ class TestProxy
   end
   
 end
-
-puts "Checking #{ARGV[0]} .."
-TestProxy.new(ARGV[0]).test
