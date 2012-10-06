@@ -27,12 +27,12 @@ class TestProxy
       response = f.get "http://www.google.com"
       @cookie = CGI::Cookie.parse(response.headers["set-cookie"])
       if(@cookie["NID"].empty?)
-        puts "#{@proxy_str} is not working."
+        puts ":(\n#{@proxy_str} is NOT working."
       else
-        puts "#{@proxy_str} is working."
+        puts ":)\n#{@proxy_str} is working."
       end
     rescue
-      puts "#{@proxy_str} refused connection."
+      puts ":(\nConnection to #{@proxy_str} timed out."
     end
   end
   
