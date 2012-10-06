@@ -10,7 +10,7 @@ class TestProxy
   #
   # ==== Params
   # 
-  # - +proxy_str+ constructor parameter which has ip:port of the proxy. e.g 127.0.0.1:80
+  # - +proxy_str+ string parameter having ip:port of the proxy server. e.g "127.0.0.1:80"
   def initialize proxy_str
     @ip, @port = proxy_str.split(":")
     @proxy_str = proxy_str
@@ -19,7 +19,7 @@ class TestProxy
   ##
   # creates new connection to google.com using +Faraday+ lib. Uses CGI::Cookie class
   # to parse the cookie returned in the response. It then checks for the presense of
-  # "NID" cookie. If the cookie exists, proxy server is working just fine.
+  # "NID" cookie set by Google. If the cookie exists, proxy server is working just fine.
   #
   def test
     begin
